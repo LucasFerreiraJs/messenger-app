@@ -34,9 +34,21 @@ yarn-error.log*
 *.env.example
 *.env.local
 *.env.staging
+
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Secret file
+.env
+.env.example
+.env.local
+.env.staging
+.env*.local
+*.env
+*.env.example
+*.env.local
+*.env.staging

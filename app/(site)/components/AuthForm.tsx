@@ -1,5 +1,7 @@
 'use client'
 
+
+import axios from "axios";
 import Button from "@/app/components/Button";
 import Input from "@/app/components/inputs/Input";
 import { useCallback, useState } from "react";
@@ -11,6 +13,7 @@ import {
   useForm
 } from "react-hook-form";
 import AuthSocialButton from "./AuthSocialButton";
+
 
 type Variant = 'LOGIN' | 'REGISTER'
 
@@ -43,10 +46,11 @@ export default function AuthForm() {
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
 
-    if (variant === 'REGISTER') { }
+    if (variant === 'REGISTER') {
+      axios.post('/api/register', data);
+    }
 
     if (variant === 'LOGIN') { }
-
 
     setIsLoading(false);
   }

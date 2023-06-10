@@ -6,6 +6,8 @@ import Button from "@/app/components/Button";
 import Input from "@/app/components/inputs/Input";
 import { useCallback, useState } from "react";
 import { BsGithub, BsGoogle } from 'react-icons/bs';
+import { toast } from 'react-hot-toast';
+import { signIn } from 'next-auth/react'
 
 import {
   SubmitHandler,
@@ -47,16 +49,43 @@ export default function AuthForm() {
     setIsLoading(true);
 
     if (variant === 'REGISTER') {
-      axios.post('/api/register', data);
+      axios.post('/api/register', data)
+        .catch(() => toast.error('Something went wrong!'))
+        .finally(() => setIsLoading(false));
+
     }
 
-    if (variant === 'LOGIN') { }
+    if (variant === 'LOGIN') {
+        signIn('credentials', {
+          ...data,
+          redirect: false,
+        }).then((callback)=>{
+          if (callback?.error){
+            toast.error('Invalid credentials');
+          }
 
-    setIsLoading(false);
+          if (callback?.ok && !callback?.error){
+            toast.success('Logged in!');
+          }
+        }).finally(() => setIsLoading(false));;
+
+      setIsLoading(false);
+    }
+
   }
   const socialAction = (action: string) => {
     setIsLoading(true);
-    setIsLoading(false);
+
+    signIn(action, { redirect: false })
+      .then((callback) => {
+        if(callback?.error){
+          toast.error('Invalid credentials');
+        }
+        if (callback?.ok && !callback?.error) {
+          toast.success('Logged In!');
+        }
+      })
+      .finally(()=>setIsLoading(false));
   }
   return (
     <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -123,22 +152,22 @@ export default function AuthForm() {
           <div className="mt-6 flex gap-2">
             <AuthSocialButton
               icon={BsGithub}
-            onClick={()=> socialAction('github')}
+              onClick={() => socialAction('github')}
             />
             <AuthSocialButton
               icon={BsGoogle}
-            onClick={() => socialAction('google')}
+              onClick={() => socialAction('google')}
             />
 
           </div>
         </div>
         <div className="flex gap-2 justify-center text-sm mt-6 px-2 text-gray-6">
-            <div>
-              {variant === 'LOGIN' ? 'New to Messenger?' : 'Already have an account?'}
-            </div>
-            <div className="underline cursor-pointer" onClick={toogleVariant}>
-              {variant ===  'LOGIN'? 'Create an account' : 'Login'}
-            </div>
+          <div>
+            {variant === 'LOGIN' ? 'New to Messenger?' : 'Already have an account?'}
+          </div>
+          <div className="underline cursor-pointer" onClick={toogleVariant}>
+            {variant === 'LOGIN' ? 'Create an account' : 'Login'}
+          </div>
         </div>
       </div>
     </div>

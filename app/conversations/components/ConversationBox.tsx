@@ -83,9 +83,10 @@ export default function ConversationBox({ data, selected }: IConversationBoxProp
           )}
         </div>
 
-        <p className={clsx('truncade text-sm',hasSeen ? 'text-gray-500' : 'text-black medium')}>
+        <p className={clsx('truncade text-sm', hasSeen ? 'text-gray-500' : 'text-black font-medium')}>
           {lastMessageText}
         </p>
+
       </div>
     </div>
   );

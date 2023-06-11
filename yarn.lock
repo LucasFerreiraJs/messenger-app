@@ -2358,7 +2358,7 @@
     "preact-render-to-string" "^5.1.19"
     "uuid" "^8.3.2"
 
-"next-cloudinary@^4.4.0":
+"next-cloudinary@^4.12.0":
   "integrity" "sha512-PzhY3W5KD9oDSvHUarrbtnx8flSriT4KKGNW2y0wy7VEoxF4bP1VunHWeBvDrAQ1pp7aYHeLVY8SAKMCVjPViA=="
   "resolved" "https://registry.npmjs.org/next-cloudinary/-/next-cloudinary-4.12.0.tgz"
   "version" "4.12.0"

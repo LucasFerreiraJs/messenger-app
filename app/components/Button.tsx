@@ -1,5 +1,3 @@
-'use client'
-
 import clsx from 'clsx';
 
 interface IButtonProps {
@@ -12,8 +10,6 @@ interface IButtonProps {
   disabled?: boolean;
 
 }
-
-
 
 export default function Button({ type,
   fullWidth,

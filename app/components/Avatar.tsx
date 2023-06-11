@@ -9,7 +9,7 @@ interface IAvatarProps {
 
 export default function Avatar({ user }: IAvatarProps) {
 
-  console.log('user', user);
+
   return (
     <div className="relative">
       <div className="relative inline-block rounded-full overflow-hidden h-9 w-9 md:h-11 md:w-11">

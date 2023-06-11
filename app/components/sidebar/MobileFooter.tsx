@@ -12,7 +12,6 @@ export default function MobileFooter() {
 
   if (isOpen) {
     return null;
-
   }
 
   return (

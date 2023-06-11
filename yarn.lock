@@ -210,7 +210,7 @@
   dependencies:
     "@floating-ui/core" "^1.2.6"
 
-"@headlessui/react@^1.7.13":
+"@headlessui/react@^1.7.15":
   "integrity" "sha512-OTO0XtoRQ6JPB1cKNFYBZv2Q0JMqMGNhYP1CjPvcJvjz8YGokz8oAj89HIYZGN0gZzn/4kk9iUpmMF4Q21Gsqw=="
   "resolved" "https://registry.npmjs.org/@headlessui/react/-/react-1.7.15.tgz"
   "version" "1.7.15"

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { HiChevronLeft, HiEllipsisHorizontal } from "react-icons/hi2";
 import ProfileDrawer from "./ProfileDrawer";
+import AvatarGroup from "@/app/components/AvatarGroup";
 
 interface IHeaderProps {
   conversation: Conversation & {
@@ -30,19 +31,24 @@ export default function Header({ conversation }: IHeaderProps) {
   return (
     <>
 
-    <ProfileDrawer
-      data={conversation}
-      isOpen={drawerOpen}
-      onClose={()=>setDrawerOpen(false)}
+      <ProfileDrawer
+        data={conversation}
+        isOpen={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
 
-    />
+      />
       <div className="bg-white w-full flex border-b-[1px] sm:px-4 py-3 px-4 lg:px-6 justify-between items-center shadow-sm">
         <div className="flex gap-3 items-center">
           <Link href="/conversation" className="lg:hidden block text-sky-500 hover:text-sky-600 transition cursor-pointer" >
             <HiChevronLeft size={32} />
           </Link>
 
-          <Avatar user={otherUser} />
+          {conversation.isGroup ? (
+            <AvatarGroup users={conversation.users} />
+          ) : (
+            <Avatar user={otherUser} />
+          )
+          }
 
           <div className="flex flex-col">
             <div>

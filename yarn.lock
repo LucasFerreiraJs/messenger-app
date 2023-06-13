@@ -2853,7 +2853,7 @@
   "resolved" "https://registry.npmjs.org/react-loading-skeleton/-/react-loading-skeleton-3.3.1.tgz"
   "version" "3.3.1"
 
-"react-select@^5.7.2":
+"react-select@^5.7.3":
   "integrity" "sha512-z8i3NCuFFWL3w27xq92rBkVI2onT0jzIIPe480HlBjXJ3b5o6Q+Clp4ydyeKrj9DZZ3lrjawwLC5NGl0FSvUDg=="
   "resolved" "https://registry.npmjs.org/react-select/-/react-select-5.7.3.tgz"
   "version" "5.7.3"

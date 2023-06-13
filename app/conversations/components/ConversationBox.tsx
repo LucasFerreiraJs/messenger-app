@@ -10,6 +10,7 @@ import { useSession } from "next-auth/react";
 import clsx from "clsx";
 import useOtherUser from "@/app/hooks/useOtherUser";
 import Avatar from "@/app/components/Avatar";
+import AvatarGroup from "@/app/components/AvatarGroup";
 
 
 interface IConversationBoxProps {
@@ -69,7 +70,15 @@ export default function ConversationBox({ data, selected }: IConversationBoxProp
 
   return (
     <div onClick={handleClick} className={clsx('w-full relative flex items-center space-x-3 hover:bg-neutral-100 rounded-lg transition cursor-pointer p-3', selected ? 'bg-neutral-100' : 'bg-white')}>
-      <Avatar user={otherUser} />
+
+          { data.isGroup ?
+          (
+            <AvatarGroup users={data.users}/>
+          ): (
+
+            <Avatar user={otherUser} />
+          )}
+
       <div className="min-w-0 flex-1">
         <div className="flex justify-between items-center mb-1">
           <p className="text-md font-medium text-gray-900">

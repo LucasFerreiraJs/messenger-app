@@ -20,7 +20,6 @@ const getUsers = async () =>{
       }
     });
 
-    console.log('getUsers', users)
     return users;
 
   }catch(err:any){

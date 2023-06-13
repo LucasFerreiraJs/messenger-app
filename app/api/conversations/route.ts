@@ -10,10 +10,6 @@ export async function POST(request: Request) {
     const currentUser = await getCurrentUser();
     const body = await request.json();
 
-
-    console.log("currentUser", currentUser)
-    console.log("body", body)
-
     const {
       userId,
       isGroup,
@@ -70,9 +66,6 @@ export async function POST(request: Request) {
     });
 
     const singleConversation = existingConversations[0];
-
-    console.log('singleConversation', singleConversation)
-
     if (singleConversation) {
       return NextResponse.json(singleConversation);
     }
@@ -95,8 +88,6 @@ export async function POST(request: Request) {
       }
     });
 
-
-    console.log('newConversation', newConversation);
     return NextResponse.json(newConversation);
 
   } catch (err: any) {

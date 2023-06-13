@@ -8,7 +8,7 @@ import UserList from "./components/UserList";
 export default async function UsersLayout({ children }: { children: React.ReactNode }) {
 
   const users = await getUsers();
-  console.log('usersantes', users)
+
 
   return (
     // @ts-expect-error Server Component

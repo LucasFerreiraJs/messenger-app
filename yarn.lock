@@ -3495,7 +3495,7 @@
   "resolved" "https://registry.npmjs.org/zod/-/zod-3.21.4.tgz"
   "version" "3.21.4"
 
-"zustand@^4.3.7":
+"zustand@^4.3.8":
   "integrity" "sha512-4h28KCkHg5ii/wcFFJ5Fp+k1J3gJoasaIbppdgZFO4BPJnsNxL0mQXBSFgOgAdCdBj35aDTPvdAJReTMntFPGg=="
   "resolved" "https://registry.npmjs.org/zustand/-/zustand-4.3.8.tgz"
   "version" "4.3.8"

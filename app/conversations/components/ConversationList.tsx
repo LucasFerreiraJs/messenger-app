@@ -20,7 +20,7 @@ interface IConversationListProps {
   users: User[]
 }
 
-export default function ConversationList({ initialItems, users}: IConversationListProps) {
+export default function ConversationList({ initialItems, users }: IConversationListProps) {
 
   const session = useSession();
   const [items, setItems] = useState(initialItems);
@@ -66,19 +66,23 @@ export default function ConversationList({ initialItems, users}: IConversationLi
       setItems((current) => {
         return [...current.filter((convo) => convo.id !== conversation.id)]
       });
+
+      if (conversationId === conversation.id) {
+        router.push('/conversations');
+      }
     }
 
     pusherClient.bind('conversation:update', updateHandler)
     pusherClient.bind('conversation:new', newHandler)
     pusherClient.bind('conversation:remove', removeHandler)
-  }, [pusherKey, router]);
+  }, [pusherKey, conversationId, router]);
 
 
   return (
     <>
       <GroupChatModal
         isOpen={isModalOpen}
-        onClose={()=> setIsModalOpen(false)}
+        onClose={() => setIsModalOpen(false)}
         users={users}
       />
 

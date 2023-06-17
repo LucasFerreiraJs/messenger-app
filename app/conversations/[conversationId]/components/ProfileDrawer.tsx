@@ -10,6 +10,7 @@ import Avatar from "@/app/components/Avatar";
 
 import ConfirmModal from "./ConfirmModal";
 import AvatarGroup from "@/app/components/AvatarGroup";
+import useActiveList from "@/app/hooks/useActiveList";
 
 interface IProfileDrawerProps {
   data: Conversation & {
@@ -34,12 +35,15 @@ export default function ProfileDrawer({ data, isOpen, onClose }: IProfileDrawerP
     return data.name || otherUser.name;
   }, [data.name, otherUser.name])
 
+  const { members } = useActiveList();
+  const isActive = members.indexOf(otherUser?.email!) !== -1;
+
   const statusText = useMemo(() => {
     if (data.isGroup) {
       return `${data.users.length} members`
     }
-    return 'Active';
-  }, [data])
+    return isActive ? 'Active' : 'Offline'
+  }, [data, isActive])
 
   return (
     <>

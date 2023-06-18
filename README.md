@@ -1,34 +1,89 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<div align="center">
+  <h2 style="font-size:30px; font-weight: 700;">Real-Time Messenger App</h2>
+</div>
 
-First, run the development server:
+<p align="center" style="margin-top: 35px; width: 100%" >
+  <img src="./public/images/banner.png" width="100%"style="" alt="project-banner" >
+</p>
+
+<div style="margin-top: 30px;"/>
+
+## Sobre o Projeto
+Esse projeto faz parte de uma série de exercícios que têm como objetivo explorar as novas funcionalidades do Next.js.
+Para acompanhar o tutorial, você pode acessar o canal [Code With Antonio no YouTube](https://www.youtube.com/watch?v=PGPGcKBpAk8&ab_channel=CodeWithAntonio).
+
+<div style="margin-top: 30px;"/>
+
+## 🛠️ Recursos explorados:
+Durante o tutorial, exploramos várias features do Next.js, incluindo:
+
+- Fetch Data: Aprendemos como buscar dados em uma API utilizando o Next.js.
+- Camadas app/api: Exploramos a estrutura do projeto em camadas, separando as responsabilidades da aplicação.
+- Autenticação com NextAuth: Implementamos autenticação de usuários utilizando o NextAuth, uma biblioteca popular para autenticação no Next.js.
+- Rotas: Demonstramos como criar rotas personalizadas e protegidas em uma aplicação Next.js.
+- Responsividade: Trabalhamos na criação de uma interface responsiva utilizando o framework Tailwind CSS.
+- Mensagens em tempo real com Pusher: Implementamos a funcionalidade de mensagens em tempo real utilizando o serviço Pusher.
+- Alertas e notificações: Adicionamos alertas e notificações para melhorar a experiência do usuário.
+- Upload de imagens com Cloudinary: Exploramos como fazer upload de imagens para a nuvem utilizando o serviço Cloudinary.
+- Manipulação de erros: Aprendemos a lidar com erros e exceções de forma adequada no Next.js.
+
+
+[Next.js](https://nextjs.org/), [React.js](https://react.dev), [Tailwind](https://tailwindcss.com), [Prisma](https://www.prisma.io), [MongoDB](https://www.mongodb.com), [NextAuth](https://next-auth.js.org), [Pusher](https://pusher.com)
+
+<div style="margin-top: 30px;"/>
+
+## 💻 Rodando o projeto
+
+<div style="margin-top: 20px;"/>
+
+### Prerequisites
+**Node version 14.x**
+
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+# Instale as dependências
+$ yarn install
+# ou
+$ npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Configure arquivo .env com suas credencials:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```js
+DATABASE_URL=
+NEXTAUTH_SECRET=
 
-## Learn More
+NEXT_PUBLIC_PUSHER_APP_KEY=
+PUSHER_APP_ID=
+PUSHER_SECRET=
 
-To learn more about Next.js, take a look at the following resources:
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+GITHUB_ID=
+GITHUB_SECRET=
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Configure Prisma
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```shell
+npx prisma db push
+```
+
+### Execute a aplicação
+
+```bash
+$ yarn dev
+# ou
+$ npm run dev
+```
+
+<div style="margin-top: 20px; align:center; text-align: center; margin:0 auto">
+
+Espero que você aproveite o tutorial e tenha uma experiência divertida e educativa ao explorar as novas funcionalidades do Next.js no projeto Next13.
+</div>
